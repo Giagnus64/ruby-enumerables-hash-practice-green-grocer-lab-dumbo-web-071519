@@ -1,6 +1,6 @@
 def consolidate_cart(cart)
   # code here
-  cart.reduce({}){|memo, (key, value)|
+ cart_obj = cart.reduce({}){|memo, (key, value)|
     if memo.include?(key);
       memo[key][:count] += 1;
     else;
@@ -8,6 +8,7 @@ def consolidate_cart(cart)
       memo[key][:count] = 1;
     end;
   }
+  return cart_obj
 end
 
 def apply_coupons(cart, coupons)
