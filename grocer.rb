@@ -1,7 +1,7 @@
 def consolidate_cart(cart)
   # code here
   cart.reduce({}){|memo, (key, value)|
-    if memo.includes?(key);
+    if memo.include?(key);
       memo[key][:count] += 1;
     else;
       memo[key] = value;
