@@ -1,5 +1,13 @@
 def consolidate_cart(cart)
   # code here
+  cart.reduce({}){|memo, (key, value)|
+    if memo.includes?(key);
+      memo[key][:count] += 1;
+    else;
+      memo[key] = value;
+      memo[key][:count] = 1;
+    end;
+  }
 end
 
 def apply_coupons(cart, coupons)
